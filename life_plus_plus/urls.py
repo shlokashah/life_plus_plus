@@ -20,8 +20,8 @@ from users.views import users,patient,doctor
 urlpatterns = [
     path('admin/', admin.site.urls),#to go to the admin site
     path('' , include("users.urls")),#default page(page where website loads)
-    path('accounts/login', users.login_view,name='login'),#login the users
-    path('accounts/logout',users.logout_view,name='logout'),#logout the users
+    path('accounts/login/', users.login_view,name='login'),#login the users
+    path('accounts/logout/',users.logout_view,name='logout'),#logout the users
     path('accounts/signup/', users.SignUpView.as_view(), name='signup'),#basic signup page,after this asks if you want to register as patient or doctor
     path('accounts/signup/patient/', patient.PatientSignUpView.as_view(), name='patient_signup'),#signup for patient
     path('accounts/signup/doctor/', doctor.DoctorSignUpView.as_view(), name='doctor_signup'),#signup for doctor
