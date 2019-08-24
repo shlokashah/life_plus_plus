@@ -14,7 +14,11 @@ def login_view(request):#function based view to log the user in(for both patient
 			user = form.get_user()
 			login(request,user)
 			messages.success(request,"You've logged in successfully!")
-			return redirect('users:home')
+			if user.is_patient:
+				return redirect("prescription:list")
+			else:
+				return redirect("prescription:list")
+			# return redirect('users:home')
 	else:
 		form = AuthenticationForm()
 	return render(request,"registrations/login.html",{'form':form})

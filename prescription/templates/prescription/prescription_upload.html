@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+	{% if user.is_authenticated %}
+		<h1>Upload new Prescription</h1>
+		<div class="create-prescription">
+			<form class="site-form" action="{% url 'prescription:upload' %}" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{form}}
+				<input type="submit" value="Upload">
+			</form>
+	</div>
+	{% endif %}
+{% endblock %}
+

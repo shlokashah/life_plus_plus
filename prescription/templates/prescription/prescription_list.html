@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h1>Previous Records</h1>
+	<div class="prescriptions">
+		{% for prescription in prescriptions %}
+			{% if user.is_authenticated %}
+				{%if request.user == prescription.username %}
+					<div class="prescription">
+						<h1><p>{{prescription.record}}</p></h1>
+						<p><a class ="download" href="{{prescription.image.url}}" class="btn btn-primary btn-sm">Download {{prescription.image}}</a></p>
+						<p>{{prescription.username}}</p>
+						<p>{{text}}</p>
+						<p>{{prescriptions}}</p>
+					</div>
+					<div class="delete">
+						<form class="delete_form" action="{% url 'prescription:delete' prescription.pk %}" method="post">
+							{% csrf_token %}
+							<input type="submit" value="Delete">
+						</form>
+					</div>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</div>
+	<h1>Upload new Prescription</h1>
+	<div class="create-prescription">
+		<form class="site-form" action="{% url 'prescription:upload' %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{form}}
+			<input type="submit" value="Upload">
+		</form>
+	</div>
+{% endblock %}
