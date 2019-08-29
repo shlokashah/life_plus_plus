@@ -1,3 +1,4 @@
+from utils import blockchain
 from django.contrib import messages
 from django.contrib.auth import login
 from django.db import transaction
@@ -8,6 +9,7 @@ from django.views.generic import CreateView,TemplateView
 from ..forms import PatientSignUpForm
 from ..models import User
 from django.http import HttpResponse
+
 
 class PatientSignUpView(CreateView):#class based view to register user as patient.
     model = User
@@ -22,3 +24,5 @@ class PatientSignUpView(CreateView):#class based view to register user as patien
         user = form.save()
         login(self.request, user)
         return HttpResponse(user)
+
+           

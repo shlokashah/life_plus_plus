@@ -28,3 +28,5 @@ class PatientSignUpForm(UserCreationForm):#creating a custom form on top of the 
             user.save()
         return user
         
+
+         
