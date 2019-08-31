@@ -9,9 +9,7 @@ import pytesseract
 # 	
 def record_list(request):
 	prescriptions=Prescriptions.objects.all()
-	pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
-	text = pytesseract.image_to_string(Image.open('C:\\Users\\shlok\\Downloads\\abc.png'))#check over here..the path here should be the image field pf the prescriptions object
-	return render(request,'prescription/prescription_list.html',{'prescriptions':prescriptions,'text':text})
+	return render(request,'prescription/prescription_list.html',{'prescriptions':prescriptions})
 def upload(request):
 	if request.method == 'POST':
 		form = forms.UploadPrescription(request.POST,request.FILES)
@@ -30,4 +28,9 @@ def delete(request,pk):
 		prescription.delete()
 	return redirect('prescription:list')
 
-
+def ocr(request,pk):
+	if request.method =='POST':
+		prescriptions=Prescriptions.objects.get(pk=pk)
+		pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+		text = pytesseract.image_to_string(Image.open(prescriptions.image))
+	return render(request,'prescription/prescription_ocr.html',{'prescriptions':prescriptions,'text':text})

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h1>Previous Records</h1>
+	<div class="prescriptions">
+		{% if user.is_authenticated %}
+			{%if request.user == prescriptions.username %}
+				<div class="prescription">
+					<h1><p>{{prescriptions.record}}</p></h1>
+					<p>{{prescription.username}}</p>
+					<p>{{text}}</p>
+						<!-- <p>{{prescriptions}}</p> -->
+				</div>
+			{% endif %}
+		{% endif %}
+	</div>
+{% endblock %}

@@ -6,5 +6,5 @@ app_name = 'prescription'
 urlpatterns=[
 	path('upload/',views.upload,name="upload"),
 	path('list/',views.record_list,name="list"),
-	path('delete/<int:pk>/',views.delete,name="delete"),]
-	# path('ocr/',views.ocr,name="ocr")]
+	path('delete/<int:pk>/',views.delete,name="delete"),
+	path('ocr/<int:pk>',views.ocr,name="ocr"),]
