@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 	<h1>Previous Records</h1>
 	<div class="prescriptions">
@@ -34,7 +35,7 @@
 	<div class="create-prescription">
 		<form class="site-form" action="{% url 'prescription:upload' %}" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
-			{{form}}
+			{{form|crispy}}
 			<input type="submit" class="btn btn-primary" value="Upload">
 		</form>
 	</div>

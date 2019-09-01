@@ -13,4 +13,10 @@
 			{% endif %}
 		{% endif %}
 	</div>
+	<div class="back">
+			<form class="back_form" action="{% url 'prescription:list'  %}" method="post">
+				{% csrf_token %}
+				<input type="submit" class="btn btn-primary" value="Go Back">
+			</form>
+	</div>
 {% endblock %}

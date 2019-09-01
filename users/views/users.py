@@ -4,6 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login,logout
 from django.contrib import messages
 from django.http import HttpResponse
+
 class SignUpView(TemplateView):#to show the default signup view
     template_name = 'registrations/signup.html'
 

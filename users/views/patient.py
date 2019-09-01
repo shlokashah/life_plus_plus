@@ -21,4 +21,4 @@ class PatientSignUpView(CreateView):#class based view to register user as patien
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return HttpResponse(user)
+        return redirect('prescription:list')

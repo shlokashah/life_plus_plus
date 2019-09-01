@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
   <div class="row">
     <div class="col-lg-4 col-md-6 col-sm-8 col-12">
@@ -6,7 +7,8 @@
       <form method="post" action="{% url 'login' %}"novalidate>
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}">
-        {{ form}}
+        {{ form|crispy}}
+        <br>
         <button type="submit" class="btn btn-primary">Log in</button>
       </form>
     </div>

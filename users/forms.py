@@ -9,10 +9,12 @@ from users.models import (User)
 class DoctorSignUpForm(UserCreationForm):#creating a custom form on top of the default UserCreationForm (to specify the user type as doctor)
     class Meta(UserCreationForm.Meta):
         model = User
+        fields=['username','license_number']
 
     def save(self, commit=True):
         user = super().save(commit=False)
         user.is_doctor = True
+        # user.license_number = super().save(commit=False)
         if commit:
             user.save()
         return user
