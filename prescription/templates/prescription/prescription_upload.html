@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if user.is_authenticated %}
+<h1>Upload new Prescription</h1>
+<div class="create-prescription">
+	<div class="card hoverable">
+		<div class="card-content">
+			<form class="site-form" action="{% url 'prescription:upload' %}" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				{% if user.is_patient %}
+				<p>Enter the Doctor Name In the last field</p>
+				{% else %}
+				<p>Enter the Patient Name In the last field</p>
+				{% endif %}
+				{{form|crispy}}
+				<br>
+				<br>
+				<input type="submit" class="btn-large" value="Upload">
+			</form>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<div class="back">
+	<a href="{% url 'prescription:list'%}"><button class="btn btn-primary btn-large pulse">Go Back</button></a>
+</div>
+
+{% endif %}
+{% endblock %}
+

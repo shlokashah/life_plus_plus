@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+	<i class="large material-icons" style="color:white">image</i>
+	<br>
+	<br>
+	<div>
+		<img class='image'src="{{prescription.image.url}}" style="padding:1px;border:thick solid red;" >
+	</div>
+	<br>
+	<br>
+	<div class="back">
+		<a href="{% url 'prescription:download' prescription.pk %}"><button class="btn-large">Download</button></a>
+		<a href="{% url 'prescription:list'%}"><button class=" btn-large ">Go Back</button></a>
+	</div>
+{% endblock %}

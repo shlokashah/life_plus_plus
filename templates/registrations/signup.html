@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2><strong>Sign up for a free account</strong></h2>
+<p class="lead" style="color:white;">Select below the type of account you want to create</p>
+<a href="{% url 'patient_signup' %}" class="btn-large" role="button" style="font-size: 30px;">I'm a patient</a>
+<a href="{% url 'doctor_signup' %}" class="btn-large" role="button" style="font-size: 30px;">I'm a doctor</a>
+<br>
+<br>
+{% endblock %}
+

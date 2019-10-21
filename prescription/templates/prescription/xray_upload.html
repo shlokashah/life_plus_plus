@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+	{% if user.is_authenticated %}
+		<div class="card hoverable">
+			<div class="card-content">
+				<h1 style="color:black;">Upload X-Ray</h1>
+				<div class="create-prescription">
+					<form class="site-form" action="{% url 'prescription:xray' %}" method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						{% if user.is_patient %}
+						<p>Enter the Doctor Name In the last field</p>
+						{% else %}
+						<p>Enter the Patient Name In the last field</p>
+						{% endif %}
+						{{form|crispy}}
+						<input type="submit" class="btn-large" value="Upload XRay">
+					</form>
+				</div>
+				<br>
+				<div class="back">
+					<form class="back_form" action="{% url 'prescription:xray_list'  %}" method="post">
+						{% csrf_token %}
+						<input type="submit" class="btn-large" value="Go Back">
+					</form>
+				</div>
+			</div>
+		</div>
+
+	{% endif %}
+{% endblock %}

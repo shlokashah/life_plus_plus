@@ -1,0 +1,71 @@
+.logo {
+  font-family: 'Georgia', cursive;
+  font-size:56px;
+  color: white;
+}
+
+h1{
+  color:white;
+}
+
+body {
+  /*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");*/
+  background-color: #071E22;
+}
+
+
+.lead{
+	font-family:'Georgia';
+	font-size:36px;
+}
+
+h2{
+	font-family:'Georgia';
+	font-size:48px;
+  color:white;
+}
+
+.pt-3{
+	font-size: 36px;
+}
+
+nav{
+  background-color: #99D5C9!important;
+}
+.brand-logo {
+  color:black!important;
+  font-size: 56px!important;
+}
+li a{
+  font-size: 53px!important;
+  color:black!important;
+}
+
+p{
+  font-size: 36px!important;
+}
+
+.alert{
+  font-size: 24px;
+  color:white;
+}
+
+.page-footer{
+  background-color:#99D5C9!important; 
+  color:black!important;
+}
+
+.btn-large{
+  color:black!important;
+  font-size: 24px;
+}
+
+/*.card .hoverable{
+  background-color:#D3BDB0!important;
+}*/
+.image
+{
+    border: 1px;
+    border-color: black;
+}
+

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-8 col-sm-10 col-12">
+      <h2>Sign up as a {{ user_type }}</h2>
+      <div class="card hoverable">
+        <div class="card-content">
+          <form method="post" novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            {{ form|crispy}}
+            <button type="submit" class="btn-large">Sign up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

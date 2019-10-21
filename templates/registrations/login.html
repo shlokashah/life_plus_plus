@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- <div class="container">
+ -->  <div class="card hoverable">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-8 col-12">
+        <div class="container">
+          <h2 style="color:black;">Log in</h2>
+          <form method="post" action="{% url 'login' %}"novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}" style="color:white;">
+            {{ form|crispy}}
+            <br>
+            <button type="submit" class="btn-large" >Log in</button>
+            <br>
+            <br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+{% endblock %}

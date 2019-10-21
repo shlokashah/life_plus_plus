@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2><strong>Welcome to Life Plus Plus</strong></h2>
+  <br>
+ <!--  <br> -->
+  <!-- <br>
+  <br>
+  <br> -->
+  <p class="lead">
+    {% if user.is_authenticated %}
+      <a href = "{% url 'prescription:list' %}">View previous Records</a>
+    {% else %}
+      <h3 style="color:white;">If you already have an account, go ahead and <a href="{% url 'login' %}">log in</a>. If you are new to Life Plus Plus, get started
+      by creating a <a href="{% url 'patient_signup' %}">patient account</a> or a <a href="{% url 'doctor_signup' %}">doctor account</a>.</h3>
+    {% endif %}
+  </p>
+  <hr>
+{% endblock %}

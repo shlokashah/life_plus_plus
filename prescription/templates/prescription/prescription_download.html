@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+	<h2>Click on the link below to download</h2>
+	<p><a class ="download" href="{{prescription.image.url}}" class="btn-large">Download {{prescription.image}}</a></p>
+</div>
+<br>
+<br>
+<div class="back">
+	<form class="back_form" action="{% url 'prescription:list'  %}" method="post">
+		{% csrf_token %}
+		<input type="submit" class="btn-large" value="Go Back">
+	</form>
+</div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Previous Records</h1>
+<form method="POST" action="{% url 'prescription:ocr' prescriptions.pk %}">
+	{% csrf_token %}
+	<div class="prescriptions">
+		{% if user.is_authenticated %}
+		{%if request.user == prescriptions.username %}
+		<div class="prescription">
+			<h1><p>{{prescriptions.record}}</p></h1>
+			<p>{{prescription.username}}</p>
+			<div id="ocr_text">
+				<textarea style="background-color: white;" id="textarea1" class="materialize-textarea" name="ocr-text">{{text}}</textarea>
+			</div>	<!-- <p>{{prescriptions}}</p> -->
+		</div>
+		{% endif %}
+		{% endif %}
+	</div>
+	<div>
+		<input type="submit" class="btn-large" value="Submit"></input>
+	</div>
+</form>	
+<!-- </div> -->
+<br>
+<div class="back">
+	<form class="back_form" action="{% url 'prescription:list'  %}" method="post">
+		{% csrf_token %}
+		<input type="submit" class="btn-large pulse" value="Go Back">
+	</form>
+</div>
+{% endblock %}

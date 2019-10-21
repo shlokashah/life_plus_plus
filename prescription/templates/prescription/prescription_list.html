@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<h1>Records Uploaded </h1>
+	<div class="prescriptions">
+		{% for prescription in prescriptions %}
+			{% if user.is_authenticated %}
+				{% if request.user == prescription.username %}
+			<div class ="card hoverable">
+				<div class="card-content">
+					<i class="medium material-icons">content_paste</i>
+					<div class="prescription">
+						<h2 style="color:black">Prescription Name:  {{prescription.record}}</h2>
+						{% if user.is_patient %}
+							<h3>Prescribed By Doctor:  {{prescription.name}}</h3>
+						{% else %}
+							<h3>Prescribed For Patient:  {{prescription.name}}</h3>
+						{% endif %}
+						<!-- <p><a class ="download" href="{{prescription.image.url}}" class="btn btn-primary btn-sm">Download {{prescription.image}}</a></p> -->
+						<a href="{% url 'prescription:download' prescription.pk %}"><button class="btn-large">Download</button></a>
+						<a href="{% url 'prescription:view' prescription.pk %}"><button class="btn-large">View</button></a>
+						<br>
+						<br>
+						<div class="delete">
+							<form class="delete_form" action="{% url 'prescription:delete' prescription.pk %}" method="post">
+								{% csrf_token %}
+								<input type="submit" class="btn-large" value="Delete">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+					<br>
+					<br>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		{% for prescription in prescriptions %}
+			{% if user.is_authenticated %}
+				{% if request.user.username == prescription.name %}
+			<div class ="card hoverable">
+				<div class="card-content">
+					<i class="medium material-icons">content_paste</i>
+					<div class="prescription">
+						<h2 style="color:black">Prescription Name:  {{prescription.record}}</h2>
+						{% if user.is_patient %}
+							<h3>Prescribed By Doctor:  {{prescription.username}}</h3>
+						{% else %}
+							<h3>Prescribed For Patient:  {{prescription.username}}</h3>
+						{% endif %}
+						<!-- <p><a class ="download" href="{{prescription.image.url}}" class="btn btn-primary btn-sm">Download {{prescription.image}}</a></p> -->
+						<a href="{% url 'prescription:download' prescription.pk %}"><button class="btn-large">Download</button></a>
+						<a href="{% url 'prescription:view' prescription.pk %}"><button class="btn-large">View</button></a>
+						<br>
+						<br>
+						<div class="delete">
+							<form class="delete_form" action="{% url 'prescription:delete' prescription.pk %}" method="post">
+								{% csrf_token %}
+								<input type="submit" class="btn-large" value="Delete">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+					<br>
+					<br>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</div>
+	<!-- <h1>XRays Uploaded </h1> -->
+	<!-- <h1>Upload new XRay</h1> -->
+	<h1>Upload new Prescription</h1>
+		<a href="{% url 'prescription:upload'%}"><button class=" btn-large">Upload Prescriptions</button></a>
+	<h1>Upload new XRay</h1>
+		<a href="{% url 'prescription:xray'%}"><button class="btn-large">Upload XRay</button></a>
+	<h1>View Previous XRay's</h1>
+		<a href="{% url 'prescription:xray_list' %}"><button class="btn-large">Uploaded XRay's</button></a>
+{% endblock %}
