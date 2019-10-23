@@ -5,7 +5,7 @@
 	<div class="prescriptions">
 		{% for x in xray %}
 			{% if user.is_authenticated %}
-				{% if request.user == x.username  or request.user.username == x.name %}
+				{% if request.user == x.username %}
 					<div class ="card hoverable">
 						<div class="card-content">
 							<i class="medium material-icons">content_paste</i>
@@ -19,8 +19,12 @@
 									<img src="{{x.image.url}}" width=224 height=224>
 								</div>
 								<div>
-									<h1 style="color:black;">This is the prediction</h1>
-									<h1>{{x.predictions}}</h1>
+									<h3 style="color:black;">This is the prediction</h3>
+									<h3 style="color:black;">{{x.predictions}}</h3>
+								</div>
+								<div>
+									<!-- <h1>Delete XRay</h1> -->
+								<a href="{% url 'prescription:xray_delete' x.pk %}"><button class="btn-large">Delete XRay</button></a>
 								</div>
 							</div>
 						</div>
@@ -45,11 +49,13 @@
 								<div>
 									<img src="{{x.image.url}}" width=224 height=224>
 								</div>
-								<div>
-									<h1 style="color:black;">This is the prediction</h1>
-									<h1>{{x.predictions}}</h1>
+								<div style="color:black;">
+									<h3 style="color:black;">This is the prediction</h3>
+									<h3 style="color:black!important;">{{x.predictions}}</h3>
 								</div>
 							</div>
+							<!-- <h1>Delete XRay</h1> -->
+								<a href="{% url 'prescription:xray_delete' x.pk %}"><button class="btn-large">Delete XRay</button></a>
 						</div>
 					</div>
 					<br>
@@ -64,4 +70,5 @@
 		<a href="{% url 'prescription:upload'%}"><button class="btn-large">Upload Prescription</button></a>
 	<h1>View Previous Prescriptions</h1>
 		<a href="{% url 'prescription:list' %}"><button class="btn-large">Uploaded Prescriptions</button></a>
+		
 {% endblock %}

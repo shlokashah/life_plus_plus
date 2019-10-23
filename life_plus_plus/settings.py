@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'prescription',
     'users',
     'crispy_forms',
+    'phonenumber_field',
     
 ]
 

@@ -7,6 +7,9 @@ import cv2
 import os
 import PIL.Image
 class XRay_class():
+	# path = "./model.h5"
+	# ml_model = model.XRayModel(path)
+
 	def __init__(self):
 		# self.image = image
 		pass
@@ -32,8 +35,11 @@ class XRay_class():
 			form = forms.UploadXRay()
 		return form , -1
 
-	def get_prediction(self,request,path):
+	def get_results(self,request,path):
+		# ml_model = model.XRayModel(path)
+		path = "./model.h5"
 		ml_model = model.XRayModel(path)
+
 		ml_model.load_model()
 
 		xray_obj = XRay.objects.get(pk = self.pk)
@@ -52,7 +58,11 @@ class XRay_class():
 		print(type(img))
 		pred = np.argmax(ml_model.model.predict(img.reshape([-1,224,224,3])))
 		# pred = np.argmax(ml_model.model.predict(img))[0]
-
+		# if pred==1:
+		# 	xray_obj.predictions = "Pneumonia"
+		# else:
+		# 	xray_obj.predictions = "No Pneumonia"	
+		# xray_obj.save()
 		if pred ==1:
 			return "Pneumonia"
 		else:
@@ -63,10 +73,10 @@ class XRay_class():
 		xray = XRay.objects.all()
 		return xray
 
-	# def delete_xray(self,request,pk):
-	# 	'''
-	# 	To Delete A Particular Record
-	# 	'''
-	# 	if request.method =='POST':
-	# 		xray = XRay.objects.get(pk = pk)
-	# 		xray.delete()
+	def delete_xray(self,request,pk):
+		'''
+		To Delete A Particular Record
+		'''
+		# if request.method =='POST':
+		xray = XRay.objects.get(pk = pk)
+		xray.delete()

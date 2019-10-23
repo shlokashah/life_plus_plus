@@ -7,7 +7,7 @@
 <br>
 <br>
 <div class="back">
-	<form class="back_form" action="{% url 'prescription:list'  %}" method="post">
+	<form class="back_form" action="{% url 'prescription:view' prescription.pk  %}" method="post">
 		{% csrf_token %}
 		<input type="submit" class="btn-large" value="Go Back">
 	</form>

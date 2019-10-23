@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <div>
+            <img src="{{image_path}}" width="224" height="224">
+        </div>
+        <div>
+            <p style="color:white;">The prediction is {{predictions}}</p>
+        </div>
+        <div>
+            <h1>View Previous XRay's</h1>
+            <a href="{% url 'prescription:xray_list' %}"><button class="btn-large">Uploaded XRay's</button></a>
+        </div>
+    </div>
+{% endblock %}

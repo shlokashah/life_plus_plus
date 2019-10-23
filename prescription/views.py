@@ -42,6 +42,7 @@ def upload(request):
 def delete(request,pk):
 	trial = prescription.Prescription()
 	trial.delete_record(request,pk)
+	# pk1 = kwargs.get('pk1', none) 
 	return redirect('prescription:list')
 
 @login_required
@@ -49,6 +50,7 @@ def ocr(request,pk):
 	if request.method == "GET":	
 		trial = prescription.Prescription()
 		ocr_instance = trial.ocr(request,pk)
+		# pk2 = kwargs.get('pk2', none) 
 		text = ocr_instance[0]
 		prescriptions = ocr_instance[1]
 	
@@ -90,43 +92,9 @@ def ocr(request,pk):
 	
 	return render(request,'prescription/prescription_ocr.html',{'prescriptions':prescriptions,'text':text })
 
-def block(request,pk):
-	instance = Prescriptions.objects.get(pk=pk)
-	text = instance.text
-	hash_ = Web3.soliditySha3(['string'] , [text])
-	hash_hex = hash_.hex()
-	if flag1==False:
-		b = blockchain.Blockchain(url="http://127.0.0.1:7545", abi=abi , contract_address=contract_address)
-		# flag1=True
-	if b.connect():
-		inserted = b.insert_hash(hash_hex)
-		print(inserted)
-		if inserted:
-			return redirect('prescription:list')
-		else:
-			return HttpResponse('<h1>Push to blockchain failed</h1>')
-	else:
-		return HttpResponse("<h1>Connection failed</h1>")
 
 @login_required
 def download(request,pk):
-	instance = Prescriptions.objects.get(pk=pk)
-	text = instance.text
-	hash_ = Web3.soliditySha3(['string'],[text])
-	hash_hex = hash_.hex()
-	if flag1==False:
-		b = blockchain.Blockchain(url="http://127.0.0.1:7545", abi=abi , contract_address=contract_address)
-		# flag1=True
-	b.connect()
-	exists = b.check_hash(hash_hex)
-
-	if exists:
-		return render(request , 'prescription/prescription_download.html' ,{"prescription":instance} )
-	else:
-		return HttpResponse("<h1>Hash does not exist in blockchain</h1>")	
-
-@login_required
-def view(request,pk):
 	instance = Prescriptions.objects.get(pk=pk)
 	text = instance.text
 	hash_ = Web3.soliditySha3(['string'],[text])
@@ -138,10 +106,21 @@ def view(request,pk):
 	exists = b.check_hash(hash_hex)
 
 	if exists:
+		return render(request , 'prescription/prescription_download.html' ,{"prescription":instance} )
+	else:
+		return HttpResponse("<h1>Hash does not exist in blockchain</h1>")	
+
+@login_required
+def view(request,pk):
+	trial = prescription.Prescription()
+	print(trial)
+	(exists , instance) = trial.view(request,pk)
+	if exists:
 		return render(request , 'prescription/prescription_view.html' , {'prescription':instance})
 	else:
 		return HttpResponse("<h1>Hash does not exist in blockchain</h1>")	
- 
+
+@login_required
 def xray(request):
 	trial = x_ray.XRay_class()
 	form , pk = trial.upload_xray(request)
@@ -150,24 +129,29 @@ def xray(request):
 		print(pk)
 		obj = XRay.objects.get(pk=pk)
 
-		pred = trial.get_prediction(request , path)   
+		pred = trial.get_results(request , path)   
 		print(pred)
 		print(obj.predictions)
+		obj.predictions = pred
+		obj.save()
 		image_path = obj.image.url
-		return render(request , "prescription/xray_upload.html" , {"image_path":image_path})	
+		return render(request , "prescription/xray_result.html" , {"image_path":image_path,"predictions":pred})	
 
-	pred = "Nahi aaya"
+	# pred = "Nahi aaya"
 	return render(request , "prescription/xray_upload.html" , {"form":form})
 
+@login_required
 def xray_list(request):
 	trial = x_ray.XRay_class()
 	xray = trial.xray_list(request)
 	return render(request,'prescription/xray_list.html',{'xray':xray})
 
-# def xray_delete(request,pk):
-# 	trial = x_ray.XRay_class()
-# 	trial.delete_xray(request,pk)
-# 	return redirect('prescription:xray_list')
+@login_required
+def xray_delete(request,pk):
+	# print("deelte ho rha hai" , pk)
+	trial = x_ray.XRay_class()
+	trial.delete_xray(request,pk)
+	return redirect('prescription:xray_list')
 
 bytecode = "608060405234801561001057600080fd5b506101c6806100206000396000f3fe608060405260043610610046576000357c01000000000000000000000000000000000000000000000000000000009004806366e34cf11461004b578063af5135fd1461009e575b600080fd5b34801561005757600080fd5b506100846004803603602081101561006e57600080fd5b81019080803590602001909291905050506100f1565b604051808215151515815260200191505060405180910390f35b3480156100aa57600080fd5b506100d7600480360360208110156100c157600080fd5b8101908080359060200190929190505050610140565b604051808215151515815260200191505060405180910390f35b60006100fc82610140565b1561010a576000905061013b565b6000829080600181540180825580915050906001820390600052602060002001600090919290919091505550600190505b919050565b60008060009050600090505b60008054905081101561018f578260008281548110151561016957fe5b90600052602060002001541415610184576001915050610195565b80600101905061014c565b60009150505b91905056fea165627a7a72305820577f0c80bf483610360752f4736f01428e4edf66c5102792faaf73951fb4cf2b0029"
 

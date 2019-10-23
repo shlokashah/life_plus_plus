@@ -56,7 +56,7 @@
 						<div class="delete">
 							<form class="delete_form" action="{% url 'prescription:delete' prescription.pk %}" method="post">
 								{% csrf_token %}
-								<input type="submit" class="btn-large" value="Delete">
+								<input type="submit" class="btn-primary" value="Delete">
 							</form>
 						</div>
 					</div>

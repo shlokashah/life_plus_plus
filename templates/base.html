@@ -20,7 +20,11 @@
 
   <nav>
     <div class="nav-wrapper sticky">
-      <div class="container"><a href="users:home" class="brand-logo left"><em>Life_Plus_Plus</em></a></div>
+      {% if user.is_authenticated %}
+        <div class="container"><a href="{% url 'prescription:list' %}" class="brand-logo left"><em>Life_Plus_Plus</em></a></div>
+      {% else %}
+        <div class="container"><a href="{% url 'users:home' %}" class="brand-logo left"><em>Life_Plus_Plus</em></a></div>
+      {% endif %}
       <div class="container">
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           {% if user.is_authenticated %}

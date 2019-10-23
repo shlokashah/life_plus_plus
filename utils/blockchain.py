@@ -148,18 +148,6 @@ class Blockchain():
 
         # return False    
 
-    def return_hash(self, hash_):
-        """
-        Returns hash of the text if found
-        """
-        print("Return hash function")
-        if self.instantiate_contract():
-            try:
-                ret_hash = self.contract.functions.return_hash(hash_).call()
-            except:
-                # print("Hash does not exists")
-                return False
-            return ret_hash
 
 if __name__ == "__main__":
     b = Blockchain("http://127.0.0.1:7545", abi, bytecode)

@@ -9,7 +9,7 @@ from users.models import (User)
 class DoctorSignUpForm(UserCreationForm):#creating a custom form on top of the default UserCreationForm (to specify the user type as doctor)
     class Meta(UserCreationForm.Meta):
         model = User
-        fields=['username','license_number']
+        fields=['username','license_number','phone_number','date_of_birth','blood_group']
 
     def save(self, commit=True):
         user = super().save(commit=False)
@@ -23,6 +23,7 @@ class DoctorSignUpForm(UserCreationForm):#creating a custom form on top of the d
 class PatientSignUpForm(UserCreationForm):#creating a custom form on top of the default UserCreationForm (to specify the user type as patient)
     class Meta(UserCreationForm.Meta):
         model = User
+        fields=['username','phone_number','date_of_birth','blood_group']
     def save(self,commit=True):
         user = super().save(commit=False)
         user.is_patient = True
