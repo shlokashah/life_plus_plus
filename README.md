@@ -20,25 +20,25 @@ To ensure the incorruptibility of the document , a hash of the document is gener
 
 ### Activity Diagram
 
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/activity.PNG">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/activity.PNG">
 
 ### Screenshots of the application
 
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/1.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/2.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/3.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/4.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/7.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/8.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/11.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/9.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/10.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/12.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/13.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/18.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/14.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/6.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/5.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/15.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/documentation/docs/17.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/1.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/2.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/3.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/4.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/7.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/8.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/11.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/9.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/10.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/12.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/13.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/18.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/14.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/6.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/5.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/15.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/17.png">
 
