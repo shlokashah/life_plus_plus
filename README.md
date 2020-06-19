@@ -1,4 +1,4 @@
-## Life++
+﻿## Life++
 The web app focuses on providing a secure online storage for the user’s medical records. The user will sign in to his account and access a dashboard of his medical records. The user will submit a photo of the physical prescription which he/she receives from the doctor. Alternatively , the doctor too can submit a photo of the prescription he/she prescribed to the user. Once any user uploads a photo of the prescription , the app performs optical character recognition and extracts text from it.
 
 To ensure the incorruptibility of the document , a hash of the document is generated and is logged in a blockchain. The blockchain ensures that the hash of the document cannot be tampered with in any condition. When the user requests for the document again, the app matches the hash of the document present in its database with that in the blockchain. If they are found to be same, it means the article was not tampered with.
@@ -41,4 +41,8 @@ To ensure the incorruptibility of the document , a hash of the document is gener
 <img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/5.png">
 <img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/15.png">
 <img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/17.png">
+
+#### Ganache 
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/19.png">
+<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/20.png">
 
