@@ -20,29 +20,29 @@ To ensure the incorruptibility of the document , a hash of the document is gener
 
 ### Activity Diagram
 
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/activity.PNG">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/activity.PNG">
 
 ### Screenshots of the application
 
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/1.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/2.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/3.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/4.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/7.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/8.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/11.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/9.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/10.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/12.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/13.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/18.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/14.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/6.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/5.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/15.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/17.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/1.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/2.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/3.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/4.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/7.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/8.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/11.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/9.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/10.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/12.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/13.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/18.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/14.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/6.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/5.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/15.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/17.png">
 
 #### Ganache 
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/19.png">
-<img src = "https://github.com/dev1911/life_plus_plus/blob/master/docs/20.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/19.png">
+<img src = "https://github.com/shlokashah/life_plus_plus/blob/master/docs/20.png">
 
